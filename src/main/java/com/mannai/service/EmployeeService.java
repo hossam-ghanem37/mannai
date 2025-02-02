@@ -44,6 +44,14 @@ public class EmployeeService {
 
 	}
 
+	public EmployeeRes getEmployee(Long id) {
+
+		Employee employee = employeeRepository.findById(id)
+				.orElseThrow(() -> new EmployeeNotFoundException("Employee not found with id: " + id));
+		
+		return employeeMapper.toEmployeeRes(employee);
+	}
+
 	public Void deleteEmployee(Long id) {
 		if (!employeeRepository.existsById(id)) {
 			throw new EmployeeNotFoundException("Employee not found with id: " + id);
