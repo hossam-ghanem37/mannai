@@ -39,6 +39,12 @@ public class EmployeeController {
 				.getAllEmployees(PageRequest.of(pageNumber, pageSize)), HttpStatus.OK);
 	}
 
+	@GetMapping("/{id}")
+	public ResponseEntity<PageRes<EmployeeRes>> getEmployee(@PathVariable Long id) {
+		return new ResponseEntity<>(employeeService
+				.getEmployee(id), HttpStatus.OK);
+	}
+
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {
 		return new ResponseEntity<>(employeeService.deleteEmployee(id), HttpStatus.OK);
