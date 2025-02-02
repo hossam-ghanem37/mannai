@@ -41,11 +41,24 @@ Ensure you have the following installed:
 }
 ```
 
+```console
+curl -X POST "http://localhost:8080/v1/api/employee" \
+     -H "Content-Type: application/json" \
+     -d '{"name": "John Doe", "department": "Engineering", "salary": 60000}'
+
+```
 ### 2. Retrieve All Employees (Paginated)
 **GET v1/api/employee?page=0&size=10**
 
+```console
+curl -X GET "http://localhost:8080/v1/api/employee?page=0&size=10"
+
+```
 ### 3. Retrieve Employee by ID
 **GET v1/api/employee/{id}**
+```console
+curl -X GET "http://localhost:8080/v1/api/employee/1"
+```
 
 ### 4. Update an Employee
 **PUT v1/api/employee/{id}**
@@ -56,9 +69,22 @@ Ensure you have the following installed:
   "salary": 6000.0
 }
 ```
+```console
+curl -X PUT "http://localhost:8080/v1/api/employee/1" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "name": "John Doe",
+           "department": "HR",
+           "salary": 70000
+         }'
+```
 
 ### 5. Delete an Employee
 **DELETE v1/api/employee/{id}**
+
+```console
+curl -X DELETE "http://localhost:8080/v1/api/employee/1"
+```
 
 ## Database Access (H2 Console)
 - **URL:** [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
