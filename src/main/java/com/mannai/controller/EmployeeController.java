@@ -11,11 +11,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static com.mannai.util.Constant.USER_API;
+import static com.mannai.util.Constant.EMP_API;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(USER_API)
+@RequestMapping(EMP_API)
 public class EmployeeController {
 
 	private final EmployeeService employeeService;
