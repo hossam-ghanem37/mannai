@@ -40,7 +40,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<PageRes<EmployeeRes>> getEmployee(@PathVariable Long id) {
+	public ResponseEntity<EmployeeRes> getEmployee(@PathVariable Long id) {
 		return new ResponseEntity<>(employeeService
 				.getEmployee(id), HttpStatus.OK);
 	}
